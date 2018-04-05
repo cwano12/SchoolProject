@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css" />
+    <title>Search Results | Treatment Center Connect</title>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img th:src="@{/images/logo10.png}" />
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/admin">Home</a></li>
+                <li><a href="/modify">Modify Treatment Centers</a></li>
+                <li><a href="/add">Add Treatment Center</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1 class="green">Search Results</h1>
+    </div>
+
+    <table class="table table-striped" id="myTable">
+        <thead class="thead-inverse">
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Treatment Center</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr th:each="center : ${centers}">
+                <td><a th:href="@{'/update/' + ${center.id}}"><span class="glyphicon glyphicon-pencil"></span></a></td>
+                <td><a th:onclick="'javascript:confirmDeleteCenter(' + ${center.id} + ',\'' + ${center.name} + '\',\'' + ${center.city} +'\',\'' + ${center.state} + '\');'">
+                    <span class="glyphicon glyphicon-remove"></span></a></td>
+                <td th:text="${center.name}" />
+                <td th:text="${center.address}" />
+                <td th:text="${center.city}" />
+                <td th:text="${center.state}" />
+                <td th:text="${center.zip}" />
+                <td th:text="${center.phoneNumber.substring(0,3) + '-'
+                            + center.phoneNumber.substring(3,6) + '-'
+                            + center.phoneNumber.substring(6)}" />
+            </tr>
+        </tbody>
+    </table>
+    <div class="alert alert-success hidden">
+        <strong>Success!</strong> <span id="success" th:text="${success}"></span>
+    </div>
+</div>
+
+<div class="modal" id="deleteConfirmationPopup" tabindex="-1" role="dialog">
+    <form id="treatmentCenterForm" th:action="@{/treatment/delete/}">
+        <input class="hidden" id="centerNumber" name="id" />
+    </form>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirm Treatment Center Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Delete <span id="centerName"></span> in <span id="centerCity"></span>, <span id="centerState"></span>?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary mb-2" onclick="deleteCenter();">Yes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="container-fluid">
+    <p>&copy; 2018</p>
+</footer>
+
+
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+        th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"/>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js" />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous" />
+<script th:src="@{/js/delete.js}" />
+<script th:src="@{/js/modify.js}" />
+<script>
+
+</script>
+</body>
+</html>

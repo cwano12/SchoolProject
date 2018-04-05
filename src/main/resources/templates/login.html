@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}" rel="stylesheet" media="screen" type="text/css" />
+    <link th:href="@{/css/login.css}" rel="stylesheet" type="text/css" />
+    <title>Login | Treatment Center Connect</title>
+</head>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-offset-5 col-md-3">
+            <form th:action="@{/admin}" method="post">
+            <div class="form-login">
+                <h4>Welcome back.</h4>
+                <input type="text" name="username" id="userName" class="form-control input-sm chat-input" placeholder="username" />
+                <br />
+                <input type="text" name="password" id="userPassword" class="form-control input-sm chat-input" placeholder="password" />
+                <br />
+                <div class="wrapper">
+            <span class="group-btn">
+                <button class="btn btn-primary btn-md">login <i class="fa fa-sign-in"></i></button>
+            </span>
+                </div>
+
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+</html>

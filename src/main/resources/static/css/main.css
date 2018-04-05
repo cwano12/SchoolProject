@@ -1,0 +1,114 @@
+html, body {
+    min-height: 100%;
+}
+
+.lead {
+    color: DarkSlateGray;
+}
+
+.navbar-header img {
+    top: 0;
+}
+
+.jumbotron.bg-stressed {
+    background-image: url("/images/stressed nails.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0;
+}
+
+.jumbotron.bg-hope {
+    background-image: url("/images/hope9.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0;
+}
+.container {
+    min-height: 100%;
+}
+
+
+h1.green {
+    color: DarkSlateGray;
+}
+
+.navbar {
+    margin-bottom: 0;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    background-color: DarkSlateGray;
+    border-radius: 0;
+ }
+
+.middle input {
+    border-radius: 4px 0 0 4px;
+    float: left;
+}
+
+ .form-control {
+    width: 215px;
+ }
+
+ .btn-primary {
+    border-radius: 0 4px 4px 0;
+ }
+
+footer {
+   /*background-color: LightSlateGray;*/
+   background-color: Black;
+   height: 60px;
+   color: White;
+   position: fixed;
+   width: 100%;
+   bottom: 0;
+}
+
+footer p {
+    margin-top: 30px;
+}
+
+h1.white {
+    color: White;
+}
+
+
+.jumbotron {
+   /* background-color: transparent;*/
+
+}
+
+.jumbotron h1 {
+    font-size: 80px;
+    font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+}
+
+.btn.btn-primary.mb-2 {
+    border-radius: 4px;
+}
+
+h1.gray {
+    color: #eee;
+}
+
+label.error {
+    color:#FF0000;
+}
+
+.form-control.error{
+    border-color: #FF0000;
+}
+
+.modal-backdrop {
+    opacity: 0.5;
+}
+
+h1.transparent {
+    color: transparent;
+}
+
+h3{
+    color: DarkSlateGray;
+}

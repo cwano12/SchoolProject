@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.4/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.4/css/bootstrap.min.css}" rel="stylesheet" media="screen" />
+    <link rel="stylesheet" href="http://cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css" />
+    <link th:href="@{/css/main.css}" rel="stylesheet" type="text/css" />
+    <title>Results | Treatment Center Connect</title>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <img th:src="@{/images/logo10.png}" />
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/admin"><span class="glyphicon glyphicon-log-out"></span> Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+<div class="container">
+    <div class="jumbotron bg-hope text-center">
+        <h1 class="transparent">Search Results</h1>
+    </div>
+    <h3 class="text-center">Search Results</h3>
+    <snall class="form-text">Click on a treatment center to visit that center's site.</snall>
+    <table class="table table-striped" id="myTable">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Treatment Center</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+                <th>Phone Number</th>
+            </tr>
+        </thead>
+        <tbody >
+            <tr th:each="center : ${centers}">
+                <td><a href="${center.url}" th:href="${center.url}" th:text="${center.name}" /></td>
+                <td th:text="${center.address}" />
+                <td th:text="${center.city}" />
+                <td th:text="${center.state}" />
+                <td th:text="${center.zip}" />
+                <td th:text="${center.phoneNumber.substring(0,3) + '-'
+                        + center.phoneNumber.substring(3,6) + '-'
+                        + center.phoneNumber.substring(6)}" />
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<footer class="container-fluid">
+    <p>&copy; 2018</p>
+</footer>
+
+<script src="http://cdn.jsdelivr.net/webjars/jquery/2.1.4/jquery.min.js"
+        th:src="@{/webjars/jquery/2.1.4/jquery.min.js}"/>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js" />
+<script>
+        $(document).ready(function(){
+            $('#myTable').dataTable();
+        });
+</script>
+</body>
+</html>
