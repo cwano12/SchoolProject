@@ -25,8 +25,8 @@ public class ViewController {
 
     @RequestMapping("/")
     public ModelAndView loadHomePage() {
-       //modelAndView.setViewName("index");
-        modelAndView.setViewName("/test");
+        //modelAndView.setViewName("index");
+        modelAndView.setViewName("/admin/test");
         return modelAndView;
     }
 
