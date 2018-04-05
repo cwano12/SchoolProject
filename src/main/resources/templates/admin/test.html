@@ -9,66 +9,66 @@
 </head>
 <body class="bg">
 
-<nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <img th:src="@{/images/logo10.png}" />
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img th:src="@{/images/logo10.png}" />
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/admin" th:href="@{/admin}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="/admin" th:href="@{/admin}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            </ul>
-        </div>
-    </div>
 
-</nav>
+    </nav>
 
-<div class="container">
-    <div class="jumbotron bg-stressed text-center">
-        <h1 class="white">Need Help?</h1>
-    </div>
-    <div class="row">
-        <div class="col-sm-4 left"/>
-        <div class="col-sm-4 middle">
-            <p class="lead">Search for nearby treatment centers.</p>
-            <form th:action="@{/treatment/zip}">
-                <div class="form-group">
-                    <input name="zip" autofocus="" type="text" class="form-control" id="search-zip" placeholder="Search by Zip"/>
-                    <button class="btn btn-primary" id="submit-search">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </div>
-                <label class="mr-sm-2" for="inlineFormCustomSelect">Search Radius</label>
-                <select name="radius" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
-                    <option value="1">1 mile</option>
-                    <option value="2">2 miles</option>
-                    <option value="3">3 miles</option>
-                    <option value="4">4 miles</option>
-                    <option value="5">5 miles</option>
-                    <option value="6">6 miles</option>
-                    <option value="7">7 miles</option>
-                    <option value="8">8 miles</option>
-                    <option value="9">9 miles</option>
-                    <option value="10">10 miles</option>
-                    <option value="11">11 miles</option>
-                    <option value="12">12 miles</option>
-                    <option value="13">13 miles</option>
-                    <option value="14">14 miles</option>
-                    <option value="15">15 miles</option>
-                </select>
-            </form>
+    <div class="container">
+        <div class="jumbotron bg-stressed text-center">
+            <h1 class="white">Need Help?</h1>
         </div>
-        <div class="col-sm-4 right"/>
+        <div class="row">
+            <div class="col-sm-4 left"/>
+            <div class="col-sm-4 middle">
+                <p class="lead">Search for nearby treatment centers.</p>
+                <form th:action="@{/treatment/zip}">
+                    <div class="form-group">
+                        <input name="zip" autofocus="" type="text" class="form-control" id="search-zip" placeholder="Search by Zip"/>
+                        <button class="btn btn-primary" id="submit-search">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>
+                    </div>
+                    <label class="mr-sm-2" for="inlineFormCustomSelect">Search Radius</label>
+                    <select name="radius" class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect">
+                        <option value="1">1 mile</option>
+                        <option value="2">2 miles</option>
+                        <option value="3">3 miles</option>
+                        <option value="4">4 miles</option>
+                        <option value="5">5 miles</option>
+                        <option value="6">6 miles</option>
+                        <option value="7">7 miles</option>
+                        <option value="8">8 miles</option>
+                        <option value="9">9 miles</option>
+                        <option value="10">10 miles</option>
+                        <option value="11">11 miles</option>
+                        <option value="12">12 miles</option>
+                        <option value="13">13 miles</option>
+                        <option value="14">14 miles</option>
+                        <option value="15">15 miles</option>
+                    </select>
+                </form>
+            </div>
+            <div class="col-sm-4 right"/>
+        </div>
     </div>
-</div>
 <footer class="container-fluid">
     <p>&copy; 2018</p>
 </footer>
