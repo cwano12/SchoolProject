@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -jar TreatmentCenterconnect-1.0-SNAPSHOT.jar
+web: java $JAVA_OPTS -jar /target/TreatmentCenterconnect-1.0-SNAPSHOT.jar
