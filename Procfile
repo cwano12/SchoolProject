@@ -1,1 +1,1 @@
-web: java -jar /target/TreatmentCenterconnect-1.0-SNAPSHOT.jar
+web: java -jar target/TreatmentCenterConnect-1.0-SNAPSHOT.jar
