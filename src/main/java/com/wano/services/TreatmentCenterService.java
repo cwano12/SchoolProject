@@ -82,7 +82,7 @@ public class TreatmentCenterService {
 
         treatmentCenter.getLongitude();
         treatmentCenter.getLatitude();
-        //treatmentCenterRepository.save(treatmentCenter);
+        treatmentCenterRepository.save(treatmentCenter);
     }
 
     public void deleteTreatmentCenter(int id) { treatmentCenterRepository.delete(id); }

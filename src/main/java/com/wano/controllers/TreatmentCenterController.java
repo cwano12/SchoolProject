@@ -64,10 +64,9 @@ public class TreatmentCenterController {
 
         if(!error.isEmpty()) {
             modelAndView.addObject("error", error);
-            System.out.println(error);
             modelAndView.addObject(treatmentCenter);
         } else {
-            //treatmentCenterService.insertTreatmentCenter(treatmentCenter);
+            treatmentCenterService.insertTreatmentCenter(treatmentCenter);
             success = "Added treatment center: " + treatmentCenter.getName();
             logger.info("Inserted treatment center: " + treatmentCenter);
             modelAndView.addObject("success", success);
@@ -83,11 +82,10 @@ public class TreatmentCenterController {
 
         if(!error.isEmpty()) {
             modelAndView.addObject("error", error);
-            System.out.print(error);
             modelAndView.addObject(treatmentCenter);
             modelAndView.setViewName("admin/updateTreatmentCenter");
         } else {
-            //addTreatmentCenter(treatmentCenter);
+            addTreatmentCenter(treatmentCenter);
             success = "Updated treatment center: " + treatmentCenter.getName();
             logger.info("Updated treatment center with id " + treatmentCenter.getId());
             modelAndView.addObject("success", success);
@@ -99,7 +97,7 @@ public class TreatmentCenterController {
 
     @RequestMapping("/delete/")
     public ModelAndView deleteTreatmentCenter(@RequestParam("id") int id) {
-        //treatmentCenterService.deleteTreatmentCenter(id);
+        treatmentCenterService.deleteTreatmentCenter(id);
         String success = "Deleted treatment center with id " + id;
         logger.info("Deleted treatment center with id " + id);
         modelAndView.addObject("success", success);

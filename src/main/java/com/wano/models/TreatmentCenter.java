@@ -120,7 +120,7 @@ public class TreatmentCenter implements Serializable{
         this.url = url;
     }
 
-    /*@Override
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof TreatmentCenter)) return false;
@@ -138,9 +138,9 @@ public class TreatmentCenter implements Serializable{
         if (getPhoneNumber() != null ? !getPhoneNumber().equals(that.getPhoneNumber()) : that.getPhoneNumber() != null)
             return false;
         return getUrl() != null ? getUrl().equals(that.getUrl()) : that.getUrl() == null;
-    }*/
+    }
 
-    /*@Override
+    @Override
     public int hashCode() {
         int result;
         long temp;
@@ -157,9 +157,9 @@ public class TreatmentCenter implements Serializable{
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         result = 31 * result + (getUrl() != null ? getUrl().hashCode() : 0);
         return result;
-    }*/
+    }
 
-    @Override
+    /*@Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof TreatmentCenter)) return false;
@@ -183,7 +183,7 @@ public class TreatmentCenter implements Serializable{
         result = 31 * result + (getZip() != null ? getZip().hashCode() : 0);
         result = 31 * result + (getPhoneNumber() != null ? getPhoneNumber().hashCode() : 0);
         return result;
-    }
+    }*/
 
     @Override
     public String toString() {
