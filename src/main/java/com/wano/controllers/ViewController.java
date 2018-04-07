@@ -26,7 +26,7 @@ public class ViewController {
     @RequestMapping("/")
     public ModelAndView loadHomePage() {
         //modelAndView.setViewName("index");
-        modelAndView.setViewName("admin/adminIndex");
+        modelAndView.setViewName("index");
         return modelAndView;
     }
 
@@ -38,19 +38,19 @@ public class ViewController {
 
     @RequestMapping("/admin")
     public ModelAndView loadAdminPage() {
-        modelAndView.setViewName("/admin/adminIndex");
+        modelAndView.setViewName("admin/adminIndex");
         return modelAndView;
     }
 
     @RequestMapping("/modify")
     public ModelAndView loadModifyTreatmentCenterPage() {
-        modelAndView.setViewName("/admin/modifyTreatmentCenter");
+        modelAndView.setViewName("admin/modifyTreatmentCenter");
         return modelAndView;
     }
 
     @RequestMapping("/add")
     public ModelAndView loadAddTreatmentCenterPage() {
-        modelAndView.setViewName("/admin/addTreatmentCenter");
+        modelAndView.setViewName("admin/addTreatmentCenter");
         return modelAndView;
     }
 
@@ -58,7 +58,7 @@ public class ViewController {
     public ModelAndView loadUpdateTreatmentCenterPage(@PathVariable("id") int id) {
         TreatmentCenter treatmentCenter = treatmentCenterService.getTreatmentCenter(id);
         modelAndView.addObject(treatmentCenter);
-        modelAndView.setViewName("/admin/updateTreatmentCenter");
+        modelAndView.setViewName("admin/updateTreatmentCenter");
         return modelAndView;
     }
 }
