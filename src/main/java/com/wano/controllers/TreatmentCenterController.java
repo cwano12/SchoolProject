@@ -45,7 +45,7 @@ public class TreatmentCenterController {
         List<TreatmentCenter> treatmentCenters = treatmentCenterService.searchTreatmentCenters(treatmentCenter);
         modelAndView.addObject("success", "");
         modelAndView.addObject("centers", treatmentCenters);
-        modelAndView.setViewName("/admin/adminResults");
+        modelAndView.setViewName("admin/adminResults");
         return modelAndView;
     }
 
@@ -72,7 +72,7 @@ public class TreatmentCenterController {
             logger.info("Inserted treatment center: " + treatmentCenter);
             modelAndView.addObject("success", success);
         }
-        modelAndView.setViewName("/admin/addTreatmentCenter");
+        modelAndView.setViewName("admin/addTreatmentCenter");
         return modelAndView;
     }
 
@@ -85,13 +85,13 @@ public class TreatmentCenterController {
             modelAndView.addObject("error", error);
             System.out.print(error);
             modelAndView.addObject(treatmentCenter);
-            modelAndView.setViewName("/admin/updateTreatmentCenter");
+            modelAndView.setViewName("admin/updateTreatmentCenter");
         } else {
             //addTreatmentCenter(treatmentCenter);
             success = "Updated treatment center: " + treatmentCenter.getName();
             logger.info("Updated treatment center with id " + treatmentCenter.getId());
             modelAndView.addObject("success", success);
-            modelAndView.setViewName("/admin/adminResults");
+            modelAndView.setViewName("admin/adminResults");
         }
 
         return modelAndView;
@@ -103,7 +103,7 @@ public class TreatmentCenterController {
         String success = "Deleted treatment center with id " + id;
         logger.info("Deleted treatment center with id " + id);
         modelAndView.addObject("success", success);
-        modelAndView.setViewName("/admin/adminResults");
+        modelAndView.setViewName("admin/adminResults");
         return modelAndView;
     }
 
