@@ -11,11 +11,11 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by 600158489 on 2/12/2018.
+ * Created by Chris on 2/12/2018.
  */
 public class AddressConverter {
 
-    Logger logger = Logger.getLogger(AddressConverter.class);
+    private Logger logger = Logger.getLogger(AddressConverter.class);
 
     // method to convert zips and adresses to lat and long values
     public List<GeocoderResult> getLatAndLong(String addressOrZip) {
@@ -26,10 +26,13 @@ public class AddressConverter {
         try {
             geocodeResponse = geocoder.geocode(geocoderRequest);
         } catch (IOException e) {
-            logger.error("Erorr trying to get address coordinates " + e);
+            logger.error("Error trying to get address coordinates " + e);
         }
 
-        List<GeocoderResult> results = geocodeResponse.getResults();
+        List<GeocoderResult> results = null;
+        if (geocodeResponse != null) {
+            results = geocodeResponse.getResults();
+        }
         return results;
 
     }

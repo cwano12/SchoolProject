@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Created by 600158489 on 2/11/2018.
+ * Created by Chris on 2/11/2018.
  */
 public class DistanceCalculator {
 

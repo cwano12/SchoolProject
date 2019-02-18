@@ -12,14 +12,14 @@ import java.util.List;
 
 
 /**
- * Created by 600158489 on 2/14/2018.
+ * Created by Chris on 2/14/2018.
  */
 @Controller
 @RequestMapping("/treatment")
 public class TreatmentCenterController {
 
-    ModelAndView modelAndView = new ModelAndView();
-    Logger logger = Logger.getLogger(TreatmentCenterController.class);
+    private ModelAndView modelAndView = new ModelAndView();
+    private Logger logger = Logger.getLogger(TreatmentCenterController.class);
 
     @Autowired
     private TreatmentCenterService treatmentCenterService;

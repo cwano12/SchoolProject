@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 /**
- * Created by 600158489 on 3/19/2018.
+ * Created by Chris on 3/19/2018.
  */
 @Controller
 public class ViewController {
@@ -25,7 +25,6 @@ public class ViewController {
 
     @RequestMapping("/")
     public ModelAndView loadHomePage() {
-        //modelAndView.setViewName("index");
         modelAndView.setViewName("index");
         return modelAndView;
     }

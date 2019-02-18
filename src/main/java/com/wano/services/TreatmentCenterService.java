@@ -15,22 +15,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by 600158489 on 2/11/2018.
+ * Created by Chris on 2/11/2018.
  */
 @Service
 public class TreatmentCenterService {
 
-    DistanceCalculator distanceCalculator = new DistanceCalculator();
-    AddressConverter addressConverter = new AddressConverter();
+    private DistanceCalculator distanceCalculator = new DistanceCalculator();
+    private AddressConverter addressConverter = new AddressConverter();
 
-    Logger logger = Logger.getLogger(TreatmentCenterService.class);
+    private Logger logger = Logger.getLogger(TreatmentCenterService.class);
 
     @Autowired
     private TreatmentCenterRepository treatmentCenterRepository;
 
     public List<TreatmentCenter> getAllTreatmentCenters() {
         List<TreatmentCenter> treatmentCenters = new ArrayList<>();
-        treatmentCenterRepository.findAll().forEach(treatmentCenters :: add);
+        treatmentCenters.addAll(treatmentCenterRepository.findAll());
         return treatmentCenters;
     }
 
@@ -96,7 +96,7 @@ public class TreatmentCenterService {
 
         List<TreatmentCenter> treatmentCenters = new ArrayList<>();
         treatmentCenterList.forEach(treatmentCenter -> {
-            if (distanceCalculator.calcDistance(radius, treatmentCenter, lat, lon)) {
+            if (DistanceCalculator.calcDistance(radius, treatmentCenter, lat, lon)) {
                 treatmentCenters.add(treatmentCenter);
             }
         });

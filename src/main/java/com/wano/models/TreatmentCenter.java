@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Created by 600158489 on 2/11/2018.
+ * Created by Chris on 2/11/2018.
  */
 @Entity
 public class TreatmentCenter implements Serializable{
@@ -158,32 +158,6 @@ public class TreatmentCenter implements Serializable{
         result = 31 * result + (getUrl() != null ? getUrl().hashCode() : 0);
         return result;
     }
-
-    /*@Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof TreatmentCenter)) return false;
-
-        TreatmentCenter that = (TreatmentCenter) o;
-
-        if (getName() != null ? !getName().equals(that.getName()) : that.getName() != null) return false;
-        if (getAddress() != null ? !getAddress().equals(that.getAddress()) : that.getAddress() != null) return false;
-        if (getCity() != null ? !getCity().equals(that.getCity()) : that.getCity() != null) return false;
-        if (getState() != null ? !getState().equals(that.getState()) : that.getState() != null) return false;
-        if (getZip() != null ? !getZip().equals(that.getZip()) : that.getZip() != null) return false;
-        return getPhoneNumber() != null ? getPhoneNumber().equals(that.getPhoneNumber()) : that.getPhoneNumber() == null;
-    }
-
-    @Override
-    public int hashCode() {
-        int result = getName() != null ? getName().hashCode() : 0;
-        result = 31 * result + (getAddress() != null ? getAddress().hashCode() : 0);
-        result = 31 * result + (getCity() != null ? getCity().hashCode() : 0);
-        result = 31 * result + (getState() != null ? getState().hashCode() : 0);
-        result = 31 * result + (getZip() != null ? getZip().hashCode() : 0);
-        result = 31 * result + (getPhoneNumber() != null ? getPhoneNumber().hashCode() : 0);
-        return result;
-    }*/
 
     @Override
     public String toString() {
